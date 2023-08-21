@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
     const sgMail = require("@sendgrid/mail");
-    sgMail.setApiKey(process.env.SENDGRID_KEY);
+    sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
     const msgToManager = {
       to: "kyotochamatsuri@gmail.com",
@@ -31,11 +31,11 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       from: "kyotochamatsuri@gmail.com",
       subject: "お問い合せありがとうございました。",
       text:
-        "お問い合せを受け付けました。回答を今しばらくお待ちくださいませ。" +
+        "お問い合せを受け付けました。今しばらく回答をお待ちくださいませ。" +
         req.body.message,
       html: `
         <p>${req.body.name}様</p>
-        <p>お問い合せを受け付けました。回答を今しばらくお待ちくださいませ。</p><br/>
+        <p>お問い合せを受け付けました。今しばらく回答をお待ちくださいませ。</p><br/>
 
         <p>【お問い合わせ内容】</p>
         <p>${req.body.message}</p>

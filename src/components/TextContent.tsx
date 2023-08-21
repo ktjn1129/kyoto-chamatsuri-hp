@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { notoserifjp } from "@/app/layout";
 
 interface TextContentProps {
   id: string;
@@ -10,17 +9,13 @@ interface TextContentProps {
 export const TextContent: FC<TextContentProps> = ({ id, title, text }) => {
   return (
     <div id={id} className="bg-white py-6 sm:py-8 lg:py-12">
-      <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-        <div className="mb-8 md:mb-12 px-8">
-          <div className={notoserifjp.className}>
-            <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-10 lg:text-3xl">
-              {title}
-            </h2>
-          </div>
-          <p className="mx-auto max-w-screen-lg text-center text-gray-600 md:text-xl leading-8 md:leading-10">
-            {text}
-          </p>
-        </div>
+      <div className="mx-auto max-w-screen-xl mb-8 px-8">
+        <h2 className="text-center text-gray-800 font-bold text-lg mb-10 lg:text-3xl lg:mb-12">
+          {title}
+        </h2>
+        <p className="text-center text-gray-700 text-md leading-8 lg:text-2xl lg:leading-10">
+          {text}
+        </p>
       </div>
     </div>
   );

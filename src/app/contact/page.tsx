@@ -46,7 +46,7 @@ export default function Contact() {
       body: JSON.stringify(data),
     });
     if (response.status === 200) {
-      router.push("/thanks");
+      router.push("/");
     } else {
       alert("正常に送信できませんでした");
     }
@@ -54,17 +54,17 @@ export default function Contact() {
 
   return (
     <>
-      <div className="bg-white py-8 sm:py-10 lg:py-12 mt-5">
-        <div className="mx-auto max-w-screen-2xl px-8 md:px-10">
-          <div className="mb-10 md:mb-16">
-            <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-              お問い合わせ
+      <div className="h-screen w-screen flex justify-center items-center">
+        <div className="mx-auto max-w-screen-2xl px-10 py-20">
+          <div className="mb-10">
+            <h2 className="mb-10 text-center text-xl font-bold text-gray-800 lg:text-3xl">
+              お問合わせ
             </h2>
-            <p className="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">
+            <p className="mx-auto max-w-screen-md text-gray-500 md:text-lg">
               以下のフォームへ必要事項をご記入の上お問い合わせいただきましたら、内容を確認いたしまして運営事務局よりご返信いたします。
             </p>
           </div>
-          <div className="mx-auto max-w-screen-lg">
+          <div className="mx-auto max-w-screen-xl">
             <FormControl isInvalid={"name" in errors}>
               <FormLabel>お名前*</FormLabel>
               <Input variant="outline" {...register("name")} />
@@ -83,7 +83,7 @@ export default function Contact() {
               <FormErrorMessage>{errors.message?.message}</FormErrorMessage>
             </FormControl>
 
-            <div className="flex items-center justify-between sm:col-span-2 mt-5 mb-20">
+            <div className="flex items-center justify-between sm:col-span-2 mt-6">
               <button
                 className="inline-block rounded-lg bg-lime-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-lime-300 transition duration-100 hover:bg-lime-600 focus-visible:ring active:bg-lime-700 md:text-base"
                 onClick={handleSubmit(onSubmit)}

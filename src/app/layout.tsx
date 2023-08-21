@@ -2,7 +2,7 @@
 
 import "./globals.css";
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Noto_Serif_JP } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { ChakraProvider } from "@chakra-ui/react";
@@ -11,12 +11,6 @@ export const notosansjp = Noto_Sans_JP({
   weight: ["400"],
   subsets: ["latin"],
   variable: "--font-notojp",
-  display: "swap",
-});
-
-export const notoserifjp = Noto_Serif_JP({
-  weight: ["400"],
-  subsets: ["latin"],
   display: "swap",
 });
 
@@ -34,9 +28,11 @@ export default function RootLayout({
     <html lang="ja">
       <body className={notosansjp.className}>
         <ChakraProvider>
-          <Navbar />
-          {children}
-          <Footer />
+          <div className="flex flex-col h-screen">
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ChakraProvider>
       </body>
     </html>

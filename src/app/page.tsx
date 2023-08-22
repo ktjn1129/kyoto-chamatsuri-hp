@@ -16,12 +16,14 @@ export default function Home() {
           お茶に詳しい方も、そうでない方も新たな発見と出会える、そんな京都茶祭になるよう、楽しんでいただきたいです！
         </p>
       </div>
-      <div className="mx-auto max-w-screen-xl mb-8 px-8 py-6 lg:py-12">
+      <div className="mx-auto max-w-screen-xl mb-6 px-8 py-6 lg:py-12">
         <h2 className="text-center text-gray-800 font-bold text-lg mb-10 lg:text-3xl lg:mb-12">
           開催日時
         </h2>
         <p className="text-center text-gray-700 text-md leading-8 lg:text-2xl lg:leading-10">
-          2023年9月24日(日) 11:00～17:00（京都平安神宮 岡崎公園）
+          2023年9月24日(日) 11:00～17:00
+          <br />
+          （京都平安神宮 岡崎公園）
         </p>
       </div>
       <div className="">

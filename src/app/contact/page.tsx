@@ -10,6 +10,7 @@ import {
   FormLabel,
   Input,
   Textarea,
+  useToast,
 } from "@chakra-ui/react";
 
 type ContactForm = {
@@ -29,6 +30,8 @@ const schema = yup.object({
 
 export default function Contact() {
   const router = useRouter();
+  const toast = useToast();
+
   const {
     register,
     handleSubmit,
@@ -47,8 +50,19 @@ export default function Contact() {
     });
     if (response.status === 200) {
       router.push("/");
+      toast({
+        title: "お問合せが正常に完了しました。",
+        status: "success",
+        position: "bottom-right",
+        isClosable: true,
+      });
     } else {
-      alert("正常に送信できませんでした");
+      toast({
+        title: "お問合せが正常に送信できませんでした。",
+        status: "error",
+        position: "bottom-right",
+        isClosable: true,
+      });
     }
   };
 
@@ -61,7 +75,7 @@ export default function Contact() {
               お問合わせ
             </h2>
             <p className="mx-auto max-w-screen-md text-gray-500 md:text-lg">
-              以下のフォームへ必要事項をご記入の上お問い合わせいただきましたら、内容を確認いたしまして運営事務局よりご返信いたします。
+              以下のフォームへ必要事項をご記入の上お問合わせいただきましたら、内容を確認いたしまして運営事務局よりご返信いたします。
             </p>
           </div>
           <div className="mx-auto max-w-screen-xl">
@@ -85,7 +99,7 @@ export default function Contact() {
 
             <div className="flex items-center justify-between sm:col-span-2 mt-6">
               <button
-                className="inline-block rounded-lg bg-lime-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-lime-300 transition duration-100 hover:bg-lime-600 focus-visible:ring active:bg-lime-700 md:text-base"
+                className="inline-block rounded-lg bg-kimidori px-8 py-3 text-center text-sm text-white outline-none ring-lime-300 transition duration-100 hover:bg-lime-600 focus-visible:ring active:bg-lime-700 md:text-base"
                 onClick={handleSubmit(onSubmit)}
               >
                 送信

@@ -8,7 +8,7 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const msgToManager = {
       to: "kyotochamatsuri@gmail.com",
       from: "kyotochamatsuri@gmail.com",
-      subject: "京都茶祭イベントサイトからのお問い合わせ",
+      subject: "【重要】京都茶祭イベントサイトからのお問い合わせ",
       text:
         req.body.name +
         "様よりお問い合せがありました。" +
@@ -17,6 +17,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         "Eメール：" +
         req.body.email,
       html: `
+        <p>以下の内容でお問合せがありましたので、ご対応をお願いします。</p>
+        </br>
         <p>【お名前】</p>
         <p>${req.body.name}</p>
         <p>【Eメール】</p>
@@ -29,16 +31,19 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     const msgToUser = {
       to: req.body.email,
       from: "kyotochamatsuri@gmail.com",
-      subject: "お問い合せありがとうございました。",
+      subject: "【京都茶祭運営事務局】お問合せありがとうございました",
       text:
-        "お問い合せを受け付けました。今しばらく回答をお待ちくださいませ。" +
+        "お問合せを受け付けました。今しばらく回答をお待ちくださいませ。" +
         req.body.message,
       html: `
         <p>${req.body.name}様</p>
-        <p>お問い合せを受け付けました。今しばらく回答をお待ちくださいませ。</p><br/>
-
+        <p>お世話になっております。京都茶祭運営事務局です。</p>
+        <p>以下の内容でお問合せを受け付けましたのでお知らせいたします。</p>
+        <p>今しばらく回答をお待ちくださいませ。</p>
+        <br/>
         <p>【お問い合わせ内容】</p>
         <p>${req.body.message}</p>
+        <br/>
       `,
     };
 

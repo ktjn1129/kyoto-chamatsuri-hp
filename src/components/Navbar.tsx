@@ -46,7 +46,7 @@ export const Navbar: FC<NavbarProps> = () => {
               href="/shops"
               className="text-lg font-semibold text-gray-700 transition duration-100 hover:text-white"
             >
-              出店一覧
+              出店情報
             </Link>
             <Link
               href="/contact"
@@ -111,7 +111,7 @@ export const Navbar: FC<NavbarProps> = () => {
                     href="/shops"
                     className="text-lg font-semibold text-gray-700 transition duration-100 hover:text-lime-600 active:text-lime-700"
                   >
-                    出店一覧
+                    出店情報
                   </a>
                 </Box>
                 <Box padding={5} onClick={onClose}>

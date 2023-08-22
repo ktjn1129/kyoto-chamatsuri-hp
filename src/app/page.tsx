@@ -29,9 +29,7 @@ export default function Home() {
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26139.758743808292!2d135.7337828106958!3d35.019974128007995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600108e5cb5b6943%3A0x77c1e2034d53d7e5!2z5bKh5bSO5YWs5ZyS!5e0!3m2!1sja!2sjp!4v1692705007066!5m2!1sja!2sjp"
           className="mx-auto max-w-screen-lg w-full h-96 px-6 mb-20"
           style={{ border: 0 }}
-          allowfullscreen=""
           loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
         ></iframe>
       </div>
     </>

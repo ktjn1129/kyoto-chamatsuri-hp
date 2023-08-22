@@ -4,7 +4,7 @@ import { FC } from "react";
 export const Hero: FC = () => {
   return (
     <div className="mb-14">
-      <div className="h-96 lg:h-screen relative overflow-hidden">
+      <div className="h-screen relative overflow-hidden">
         <Image
           src="/images/hero.svg"
           layout="fill"

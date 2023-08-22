@@ -1,7 +1,6 @@
 "use client";
 
 import "./globals.css";
-import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
@@ -13,11 +12,6 @@ export const notosansjp = Noto_Sans_JP({
   variable: "--font-notojp",
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "京都茶祭2023秋",
-  description: "Kyoto Japanese Tea Festival 2023 Autumn",
-};
 
 export default function RootLayout({
   children,

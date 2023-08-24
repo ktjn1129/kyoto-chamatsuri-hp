@@ -22,7 +22,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={notosansjp.className}>
         <ChakraProvider>
-          <div className="flex flex-col h-screen">
+          <div className="flex flex-col">
             <Navbar />
             {children}
             <Footer />

@@ -3,7 +3,7 @@ import { FC } from "react";
 
 export const Hero: FC = () => {
   return (
-    <div className="mb-14">
+    <div className="mb-20">
       <div className="h-screen relative overflow-hidden">
         <Image
           src="/images/hero.svg"
